@@ -12,7 +12,7 @@ except FileNotFoundError:
     st.stop()
 
 # Título y subtítulo
-st.title("🍷 AI Factory: Predictor de Vinos")
+st.title("🍷 AI Factory: Predictor de Vinos - 2014606")
 st.markdown("Esta app (usando el dataset de Vinos) demuestra que el 'AI Factory' puede desplegar CUALQUIER modelo.")
 
 # --- UI de Entrada (Sliders) ---
@@ -65,4 +65,5 @@ if st.sidebar.button('¡Predecir tipo de Vino!'):
     proba_df = pd.DataFrame(prediction_proba, columns=model.classes_)
     proba_df = proba_df.rename(columns=wine_map).T
     proba_df.columns = ['Probabilidad']
+
     st.bar_chart(proba_df)
